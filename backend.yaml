@@ -1,6 +1,8 @@
 - name: Configuring backend server
   hosts: backend
   become: yes
+  vars:
+    mysql_root_password: ExpenseApp@1
   tasks:
   - name: Disable current nodejs
     ansible.builtin.command: dnf module disable nodejs -y
@@ -53,6 +55,9 @@
     community.mysql.mysql_db:
       state: import
       name: all
+      local_user: root
+      local_password: "{{ mysql_root_password }}"
+      local_host: mysql.daws82s.cloud
       target: /app/schema/backend.sql
 
 
