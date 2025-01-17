@@ -45,7 +45,11 @@
       state: restarted
       daemon_reload: true
       enabled: true
-  - name: import my sql data
+  - name: install libraries
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
+  - name: import mysql data
     community.mysql.mysql_db:
       state: import
       name: all
