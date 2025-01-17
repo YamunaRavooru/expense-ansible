@@ -27,3 +27,6 @@
       login_password: "{{ mysql_root_password }}"
       login_host: mysql.daws82s.cloud
       register: mysql_result
+  - name: print the result
+    ansible.builtin.debug:
+      msg: "mysql info: {{ mysql_result }}"
