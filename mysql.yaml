@@ -26,3 +26,4 @@
       login_user: root
       login_password: "{{ mysql_root_password }}"
       login_host: mysql.daws82s.cloud
+      register: mysql_result
