@@ -2,11 +2,11 @@
   hosts: backend
   become: yes
   tasks:
-  - name: disable current nodejs
-    ansible.buitin.command: dnf module disable nodejs -y
+  - name: Disable current nodejs
+    ansible.builtin.command: dnf module disable nodejs -y
 
   - name:  Enable nodejs 20
-    ansible.buitin.command: dnf module enable nodejs:20 -y
+    ansible.builtin.command: dnf module enable nodejs:20 -y
   - name: Install nodejs 
     ansible.builtin.package:
       name: nodejs
