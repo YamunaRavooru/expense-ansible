@@ -5,7 +5,7 @@
   - name: Install mysql libraries
     ansible.builtin.pip:
       name: "{{ item }}"
-      state: installed
+      executable: pip3.9
     loop
     - PyMySQL   
   - name: Install mysql server
