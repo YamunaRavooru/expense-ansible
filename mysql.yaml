@@ -20,4 +20,4 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: ExpenseApp@1
-      login_host: mysql
+      login_host: mysql.daws82s.cloud
