@@ -1,6 +1,8 @@
 - name: configuring mysql server
   hosts: mysql
   become: yes
+  vars:
+    mysql_root_password: ExpenseApp@1
   tasks:
   - name: Install mysql libraries
     ansible.builtin.pip:
@@ -19,5 +21,5 @@
   - name: connecting to myaql
     community.mysql.mysql_info:
       login_user: root
-      login_password: ExpenseApp@1
+      login_password: mysql_root_password
       login_host: mysql.daws82s.cloud
